@@ -1,0 +1,2 @@
+What happens if the `name` variable is not passed to the function?
+only "Hello, " will be printed on the screen, without genarate any error
