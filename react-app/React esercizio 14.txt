@@ -1,0 +1,2 @@
+Can you render the `Message` component directly within the `App` component? What happens if you do?
+Yes, if `Message` is imported, but obviously contains only the `p`
