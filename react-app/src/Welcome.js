@@ -5,7 +5,13 @@ export class Welcome extends React.Component{
         return (
             <>
             <p>Hello {this.props.name}!</p>
-            { (this.props.age > 17 && this.props.age < 66) && <Age age={this.props.age}/>}
+            {(
+             this.props.age > 17 &&
+             this.props.age < 66 &&
+             (this.props.name).toLowerCase() == 'john'
+             ) &&
+             <Age age={this.props.age}/>
+            }
             </>
         )
     }
