@@ -4,7 +4,7 @@ export class App extends React.Component{
     render(){
         return (
         <React.StrictMode>
-            <Welcome/>
+            <Welcome name="Stefano" age="21"/>
         </React.StrictMode> 
         )
     }
