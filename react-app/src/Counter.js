@@ -5,12 +5,12 @@ export default class Counter extends React.Component{
         super(props)
         
         this.state={
-        count:0
+        count:this.props.init ?? 0
         }
 
         setInterval(() => {
-            this.setState((state)=>{return {count:  state.count+1}})
-        }, 1000);
+            this.setState((state)=>{return {count:  state.count+(this.props.increment ?? 1)}})
+        }, this.props.interval ?? 1000);
     }
 
     render(){
