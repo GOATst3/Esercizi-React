@@ -10,9 +10,7 @@ export default class Counter extends React.Component{
         }
 
     }
-    
-    componentDidMount(){
-        setInterval(() => {
+    intervalID = () =>{setInterval(() => {
             if(this.state.count < this.props.init*10)
                 this.setState((state)=>{
                     return {
@@ -20,7 +18,15 @@ export default class Counter extends React.Component{
                     }
                 })
             else this.setState({count:  this.props.init})
-        }, this.props.interval);
+        }, this.props.interval);}
+
+    componentDidMount(){
+        this.intervalID()
+    }
+
+    componentWillUnmount(){
+        console.log('sto smontando')
+        clearInterval(this.intervalID)
     }
 
     render(){
