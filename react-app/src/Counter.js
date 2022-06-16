@@ -9,6 +9,9 @@ export default class Counter extends React.Component{
         count:this.props.init 
         }
 
+    }
+    
+    componentDidMount(){
         setInterval(() => {
             if(this.state.count < this.props.init*10)
                 this.setState((state)=>{
