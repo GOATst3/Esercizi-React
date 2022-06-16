@@ -11,16 +11,21 @@ export default class Counter extends React.Component{
 
     }
     intervalID = () =>{setInterval(() => {
-            if(this.state.count < this.props.init*10)
                 this.setState((state)=>{
                     return {
                         count:  state.count+(this.props.increment)
                     }
                 })
-            else this.setState({count:  this.props.init})
         }, this.props.interval);}
 
+    componentDidUpdate(){
+        if(this.state.count > this.props.init*10) this.setState({count:  this.props.init})
+        console.log('update')
+        
+    }
+
     componentDidMount(){
+        console.log('sto montando')
         this.intervalID()
     }
 
