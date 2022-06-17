@@ -1,4 +1,5 @@
 import React from "react";
+import CounterButton from "./CounterButton";
 
 export default class ClickCounter extends React.Component{
     state={count : 0}
@@ -13,7 +14,7 @@ export default class ClickCounter extends React.Component{
         return(
             <>
             <h1>{this.state.count}</h1>
-            <button onClick={this.increment}>Click me</button>
+            <CounterButton childClick={this.increment}>Click me</CounterButton>
             </>
         )
     }
