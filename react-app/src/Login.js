@@ -4,7 +4,8 @@ export default class Login extends React.Component{
     state={
         username:'',
         password:'',
-        remember:false
+        remember:false,
+        login:false
     }
 
     handleChanges=(event)=>{/* 
@@ -20,9 +21,10 @@ export default class Login extends React.Component{
         console.log(this.state)
     }
 
-    showState=()=>{
+    onLogin=(event)=>{
+        event.preventDefault();
+        this.setState({login:true})
         console.log(this.state)
-        console.log(this.state.username && this.state.password)
     }
 
     render(){
@@ -51,6 +53,15 @@ export default class Login extends React.Component{
                     onChange={this.handleChanges}
                 />
                 Remember Me
+                <button 
+                    type={"submit"}
+                    style={{marginLeft:'25px'}} 
+                    onClick={this.onLogin}
+                    disabled={this.state.username.trim()==='' || this.state.password.trim()===''?true:false}
+                    >
+                        Login
+                </button>
+                
             </>
         )
     }
