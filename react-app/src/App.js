@@ -1,9 +1,15 @@
 import Colors from "./Colors";
 
 function App() {
+  const colors=[
+    {id:0,color:'blue'},
+    {id:1,color:'red'},
+    {id:2,color:'black'}
+
+  ]
   return (
     <div className="App">
-      <Colors colors={['blue','red','black']}/>
+      <Colors colors={colors}/>
     </div>
   );
 }
