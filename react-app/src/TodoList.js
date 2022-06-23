@@ -6,7 +6,9 @@ export default class TodoList extends React.Component{
         newTodo:''
     }
     onClickHandler=()=>{
-        this.setState(state=>state.items.push(state.newTodo))
+        this.setState(state=>{
+            if (state.newTodo.trim()!=='') state.items.push(state.newTodo)
+        })
         this.setState({newTodo:''})
     }
     inputHandler=(event)=>{
@@ -15,11 +17,20 @@ export default class TodoList extends React.Component{
     reset=()=>{
         this.setState({items:[]})
     }
+    
+    removeTask = (index) => {
+        this.setState(state=>state.items.splice(index,1))
+    }
 
     render(){
         return(
             <ul>
-                {this.state.items.map(item=><li>{item}</li>)}
+                {this.state.items.map((item,index)=>
+                    <li key={index}>
+                        {item}
+                        <button onClick={()=>this.removeTask(index)} style={{margin:'5px 20px'}}>Remove</button>
+                    </li>
+                )}
                 <input value={this.state.newTodo} onChange={this.inputHandler}></input>
                 <button onClick={this.onClickHandler}>Add</button>
                 <button onClick={this.reset}>Reset</button>
