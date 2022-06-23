@@ -7,6 +7,7 @@ export default class TodoList extends React.Component{
     }
     onClickHandler=()=>{
         this.setState(state=>state.items.push(state.newTodo))
+        this.setState({newTodo:''})
     }
     inputHandler=(event)=>{
         this.setState({newTodo:event.target.value})
@@ -16,7 +17,7 @@ export default class TodoList extends React.Component{
         return(
             <ul>
                 {this.state.items.map(item=><li>{item}</li>)}
-                <input onChange={this.inputHandler}></input>
+                <input value={this.state.newTodo} onChange={this.inputHandler}></input>
                 <button onClick={this.onClickHandler}>Add</button>
             </ul>
         )
