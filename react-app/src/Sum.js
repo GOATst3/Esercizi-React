@@ -5,3 +5,7 @@ export default function Sum (props){
     }
     return <h1>{sum}</h1>
 }
+
+Sum.defaultProps={
+    numbers:[0]
+}
