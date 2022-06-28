@@ -25,12 +25,7 @@ export default class TodoList extends React.Component{
     render(){
         return(
             <ul>
-                {this.state.items.map((item,index)=>
-                    <li key={index}>
-                        {item}
-                        <button onClick={()=>this.removeTask(index)} style={{margin:'5px 20px'}}>Remove</button>
-                    </li>
-                )}
+                {this.props.render(this.state.items,this.removeTask)}
                 <input value={this.state.newTodo} onChange={this.inputHandler}></input>
                 <button onClick={this.onClickHandler}>Add</button>
                 <button onClick={this.reset}>Reset</button>

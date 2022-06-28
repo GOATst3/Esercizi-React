@@ -1,16 +1,23 @@
-import Colors from "./Colors";
 import TodoList from './TodoList'
 
 function App() {
-  const colors=[
-    {id:0,color:'blue'},
-    {id:1,color:'red'},
-    {id:2,color:'black'}
-  ]
 
   return (
     <div className="App">
-      <TodoList/>
+      <TodoList render={
+        (items,remove)=>{
+          return(
+            items.map((item,index)=>
+              <li key={index}>
+                  {item}
+                  <button onClick={()=>remove(index)} style={{margin:'5px 20px'}}>Remove</button>
+              </li>
+          )
+          )
+        }
+      }>
+
+      </TodoList>
     </div>
   );
 }
