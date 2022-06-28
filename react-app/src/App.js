@@ -5,7 +5,7 @@ import Child from './Child';
 function App() {
   return (
     <div className="App">
-      <Container>
+      <Container title='Titolo'>
         <Child/>
       </Container>
     </div>

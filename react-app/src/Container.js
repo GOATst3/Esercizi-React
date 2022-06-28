@@ -5,6 +5,9 @@ export default class Container extends React.Component{
         return(
             <>
                 <div className='container'>
+                    <h1>
+                        {this.props.title}   
+                    </h1>
                     {this.props.children}
                 </div>
             </>
