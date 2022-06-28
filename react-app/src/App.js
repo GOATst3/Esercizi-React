@@ -4,8 +4,8 @@ function App() {
 
   return (
     <div className="App">
-      <TodoList render={
-        (items,remove)=>{
+      <TodoList>
+        {(items,remove)=>{
           return(
             items.map((item,index)=>
               <li key={index}>
@@ -14,8 +14,7 @@ function App() {
               </li>
           )
           )
-        }
-      }>
+        }}
 
       </TodoList>
     </div>
