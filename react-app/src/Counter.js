@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
-export default function Counter (){
+import {useState,useEffect} from 'react'
+export default function Counter (props){
     const [count, setCount] = useState(0)
-    console.log(count)
-
-    const clickHandler = ()=>setCount(c=>c+1)
+    useEffect(()=>props.onCounterChange(count),[count])
+    
+    const clickHandler = () =>setCount(c=>c+1)
 
     return (
         <>
