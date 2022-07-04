@@ -1,8 +1,8 @@
-import GithunUser from "./GithubUser";
+import GithunUserList from "./GithubUserList";
 function App() {
   return (
     <div className="App">
-      <GithunUser username={'GOsATst3'}/>
+      <GithunUserList/>
     </div>
   );
 }

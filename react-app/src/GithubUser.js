@@ -22,12 +22,12 @@ export default function GithunUser(props){
 
     if (data.login){
         return(
-            <div style={{textAlign:'center'}}>
-                    <h1>{data.login}</h1>
-                    <p>Click <a href={data.html_url}>Here</a> to go to the GitHub account</p>
-                <img src={data.avatar_url}/>
+            <div style={{textAlign:'center', borderBottom:' 2px solid black'}}>
+                <h1>{data.login}</h1>
+                <p>Click <a href={data.html_url}>Here</a> to go to the GitHub account</p>
+                <img src={data.avatar_url} height={'100px'} width={'100px'}/>
             </div>
         )
     }
-    else return <h1>{data.message}</h1>
+    else return <h1 style={{textAlign:'center', borderBottom:' 2px solid black'}}>{data.message}</h1>
 }
