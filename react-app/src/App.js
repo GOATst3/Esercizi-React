@@ -1,10 +1,8 @@
-import Form from './Form';
-function App() {
+import GithubUser from "./GithubUser";
+export default function App() {
   return (
     <div className="App">
-      <Form/>
+      <GithubUser username={'GOATst3'}/>
     </div>
   );
 }
-
-export default App;
