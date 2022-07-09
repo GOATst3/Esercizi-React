@@ -1,8 +1,8 @@
-import GithubUser from "./GithubUser";
+import CurrentLocation from "./CurrentLocation";
 export default function App() {
   return (
     <div className="App">
-      <GithubUser username={'GOATst3'}/>
+      <CurrentLocation/>
     </div>
   );
 }
