@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 export default function Login(){
     const [ data, setData]= useState({
@@ -7,6 +7,12 @@ export default function Login(){
         remember:false,
         login:false
     })
+
+    const inputRef = useRef(null)
+
+    const focusUsername=()=>{
+        inputRef.current.focus()
+    }
     
     const handleChanges=(e)=>{
         const { name, type, value, checked } = e.target
@@ -28,6 +34,8 @@ export default function Login(){
         })
         console.log(data)
     }
+
+    useEffect(()=>focusUsername(),[])
     return (
         <>
             <input 
@@ -35,7 +43,8 @@ export default function Login(){
                 name={'username'} 
                 placeholder={'Username'}
                 value={data.username} 
-                onChange={handleChanges} 
+                onChange={handleChanges}
+                ref={inputRef} 
             />
             <input
                 type={'password'}
