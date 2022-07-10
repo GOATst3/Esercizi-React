@@ -1,8 +1,8 @@
-import Login from "./Login";
+import CarDetails from "./CarDetails";
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <CarDetails initialData={{model:'Fiat Panda',year:2020,color:"gray"}}/>
     </div>
   );
 }
